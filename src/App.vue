@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <TopMenu/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import TopMenu from 'components/content/topBar/TopMenu'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TopMenu
   }
 }
 </script>
@@ -25,4 +25,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+@import "assets/css/base.css";
 </style>
