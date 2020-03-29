@@ -4,8 +4,8 @@
       SSTMC welcome you
     </div>
     <div class="top-menu">
-    <Menu mode="horizontal" :theme="theme1" active-name="1">
-      <MenuItem name="1">
+    <Menu mode="horizontal" :theme="theme1" active-name="1" @on-select="test">
+      <MenuItem name="1" >
         <Icon type="ios-paper" />会议管理
       </MenuItem>
       <MenuItem name="2">
@@ -38,6 +38,25 @@ export default {
     return {
       theme1: "light"
     };
+  },
+  methods: {
+    test(id){
+      console.log(id)
+      if (id == "1"){
+this.$router.push({
+        name: 'Test'
+        
+      })
+      }
+      if (id == "2"){
+        this.$router.push({
+        name: 'TestMeeting'
+        
+      })
+
+      }
+      
+    }
   }
 };
 </script>
