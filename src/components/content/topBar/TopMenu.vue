@@ -5,12 +5,40 @@
     </div>
     <div class="top-menu">
     <Menu mode="horizontal" :theme="theme1" active-name="1" @on-select="test">
-      <MenuItem name="1" >
+      <Submenu name="1">
+        <template slot="title">
+          <Icon type="ios-stats" />会议管理
+        </template>
+        <MenuGroup title="检索">
+          <MenuItem name="1-1">会议查询</MenuItem>
+          <!-- <MenuItem name="3-2"></MenuItem> -->
+        </MenuGroup>
+        <MenuGroup title="新建">
+          <MenuItem name="3-4">新建会议</MenuItem>
+          <MenuItem name="3-4">新建提醒</MenuItem>
+          <!-- <MenuItem name="3-5">流失用户</MenuItem> -->
+        </MenuGroup>
+      </Submenu>
+
+      <!-- <MenuItem name="1" >
         <Icon type="ios-paper" />会议管理
-      </MenuItem>
-      <MenuItem name="2">
+      </MenuItem> -->
+      <!-- <MenuItem name="2">
         <Icon type="ios-people" />俱乐部管理
-      </MenuItem>
+      </MenuItem> -->
+      <Submenu name="2">
+        <template slot="title">
+          <Icon type="ios-stats" />俱乐部管理
+        </template>
+        <MenuGroup title="使用">
+          <MenuItem name="3-1">member management</MenuItem>
+          <MenuItem name="3-2">officer management</MenuItem>
+        </MenuGroup>
+        <MenuGroup title="留存">
+          <MenuItem name="3-4">用户留存</MenuItem>
+          <MenuItem name="3-5">流失用户</MenuItem>
+        </MenuGroup>
+      </Submenu>
       <Submenu name="3">
         <template slot="title">
           <Icon type="ios-stats" />系统管理
@@ -36,7 +64,7 @@ export default {
   name: "TopMenu",
   data() {
     return {
-      theme1: "light"
+      theme1: "dark"
     };
   },
   methods: {
@@ -62,7 +90,10 @@ this.$router.push({
 </script>
 <style >
   .top-bar {
+    margin: 0;
+    padding: 0;
     display: flex;
+    background-color: chocolate;
   }
   .top-menu {
     flex:1 ;
