@@ -56,16 +56,21 @@
         <Icon type="ios-construct" />退出
       </MenuItem>
     </Menu>
-    </div>
+    </div>    
   </div>
 </template>
+
 <script>
+
 export default {
   name: "TopMenu",
   data() {
     return {
       theme1: "dark"
     };
+  },
+  components:{
+   
   },
   methods: {
     test(id){
@@ -97,7 +102,7 @@ this.$router.push({
   }
   .top-menu {
     flex:1 ;
-    margin-left: 40px;
+    margin-left: 150px;
     float: left;
   }
   .top-icon-title {
