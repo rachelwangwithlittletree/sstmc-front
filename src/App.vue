@@ -10,7 +10,7 @@
     </div>
     
     <div class="main-content">
-      <main-content/>
+      <!-- <main-content/> -->
     </div>
     <router-view></router-view>
     
@@ -20,12 +20,12 @@
 <script>
 
 import TopMenu from 'components/content/topBar/TopMenu'
-import MainContent from "components/content/mainContent/MainContent"
+// import MainContent from "components/content/mainContent/MainContent"
 export default {
   name: 'App',
   components: {
     TopMenu,
-     MainContent
+    //  MainContent
   }
 }
 </script>

@@ -3,7 +3,9 @@ import VueRouter from "vue-router";
 
 Vue.use(VueRouter);
 
-const Test = () => import("components/common/test");
+const ClubMain = () => import("views/clubs/ClubMain");
+const MeetingMain = () => import("views/meetings/MeetingMain");
+const SystemManageMain = () => import("views/sysmanage/SystemManageMain");
 const TestMeeting = () => import("components/common/TestMeeting");
 const originalPush = VueRouter.prototype.push;
 VueRouter.prototype.push = function push(location) {
@@ -12,15 +14,33 @@ VueRouter.prototype.push = function push(location) {
 
 const routes = [
   {
-    path: "/test",
-    name: "Test",
-    component: Test
+    path: "",
+    redirect: "/home",
+  },
+  {
+    path: "/home",
+    component: MeetingMain,
+  },
+  {
+    path: "/clubmain",
+    name: "ClubMain",
+    component: ClubMain,
+  },
+  {
+    path: "/meetingmain",
+    name: "MeetingMain",
+    component: MeetingMain,
+  },
+  {
+    path: "/sysmanage",
+    name: "SystemManageMain",
+    component: SystemManageMain,
   },
   {
     path: "/testmeeting",
     name: "TestMeeting",
-    component: TestMeeting
-  }
+    component: TestMeeting,
+  },
 ];
 const router = new VueRouter({
   routes,

@@ -1,27 +1,33 @@
 <template>
-    <div class="content">
-      <div class="left">
-          <main-left/>
-      </div>
-      <div class="right">
-      </div>
+  <div class="content">
+    <div class="left">
+      <slot name="left">
+        <main-left />
+      </slot>
     </div>
+    <div class="right">
+      <slot name="right">
+        <h2>hihi</h2>
+      </slot>
+    </div>
+  </div>
 </template>
 
 <script type="text/ecmascript-6">
-import MainLeft from "components/common/MainLeft"
+import MainLeft from "components/common/MainLeft";
 export default {
-    name: "",
-    data() {
-        return {}
-    },
-    components: {MainLeft},
-    methods: {}
-}
+  name: "MainContent",
+  data() {
+    return {};
+  },
+  props: {},
+  components: { MainLeft },
+  methods: {}
+};
 </script>
 
 <style  scoped>
 .content {
-    display: flex;
+  display: flex;
 }
 </style>
