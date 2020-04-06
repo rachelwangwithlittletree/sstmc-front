@@ -21,24 +21,50 @@ export default {
         select: "",
         input: "hh"
       },
-      subMenus: [
-        {
-          name: "会议管理",
-          title: "会议管理",
-          menuGroup: [
-            {
-              title: '检索',
-              menuItem: [
-                {
-                  name: '会议',
-                  title: '新建会议'
-                }
-              ]
-            }
-            ]
-        }
-      ]
+      // subMenus: [
+      //   {
+      //     name: "会议管理",
+      //     title: "会议管理",
+      //     menuGroup: [
+      //       {
+      //         title: '检索',
+      //         menuItem: [
+      //           {
+      //             name: '会议',
+      //             title: '新建会议'
+      //           }
+      //         ]
+      //       }
+      //       ]
+      //   }
+      // ]
     };
+  },
+  props:{
+    subMenus: {
+      type: Array,
+      default(){
+        return []
+      }
+    }
+    // subMenus: [
+    //     {
+    //       name: "会议管理",
+    //       title: "会议管理",
+    //       menuGroup: [
+    //         {
+    //           title: '检索',
+    //           menuItem: [
+    //             {
+    //               name: '会议',
+    //               title: '新建会议'
+    //             }
+    //           ]
+    //         }
+    //         ]
+    //     }
+    //   ]
+
   },
   components: {
     LeftSubMenu

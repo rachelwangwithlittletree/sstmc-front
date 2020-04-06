@@ -1,7 +1,7 @@
 <template>
   <div class>
     <div class="club-left">
-       <main-left />
+       <main-left :subMenus = "subMenus" />
     </div>
     <div class="club-right">
        <h2>俱乐部会议</h2>
@@ -14,7 +14,25 @@ import MainLeft from "components/common/MainLeft"
 export default {
   name: "ClubMain",
   data() {
-    return {};
+    return {
+      subMenus: [
+        {
+          name: "俱乐部管理",
+          title: "俱乐部管理",
+          menuGroup: [
+            {
+              title: '检索',
+              menuItem: [
+                {
+                  name: '会议',
+                  title: '新建会议'
+                }
+              ]
+            }
+            ]
+        }
+      ]
+    };
   },
   components: {MainLeft},
   methods: {}

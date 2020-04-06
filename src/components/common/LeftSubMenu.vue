@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <Menu mode="vertical" :theme="theme1" active-name="1" :open-names="['会议管理']" @on-select="test">
+      <Menu mode="vertical" :theme="theme1" active-name="1" :open-names="openNames" @on-select="test">
         <!-- <Submenu name="1">
           <template slot="title">
             <Icon type="ios-stats" />会议管理
@@ -66,6 +66,12 @@ export default {
       type: Array,
       default() {
         return [];
+      }
+    },
+    openNames: {
+      type: Array,
+      default() {
+        return ['会议管理','俱乐部管理','系统管理'];
       }
     }
   }
