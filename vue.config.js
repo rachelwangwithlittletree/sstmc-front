@@ -1,4 +1,6 @@
 module.exports = {
+  publicPath: "./",
+  outputDir: "dist",
   configureWebpack: {
     resolve: {
       alias: {
@@ -6,16 +8,16 @@ module.exports = {
         common: "@/common",
         components: "@/components",
         views: "@/views"
-      },
-    },
+      }
+    }
   },
   css: {
     loaderOptions: {
       // 向 CSS 相关的 loader 传递选项
 
       less: {
-        javascriptEnabled: true,
-      },
-    },
-  },
+        javascriptEnabled: true
+      }
+    }
+  }
 };
