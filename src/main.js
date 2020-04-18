@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+// import Home from './Home.vue'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 import 'assets/css/index.less'
@@ -17,8 +18,7 @@ Vue.use(iView, {
 });
 
 new Vue({
-  el: '#app',
+  el: "#app",
   router,
-  render: h => h(App),
-  
-}).$mount('#app')
+  render: h => h(App)
+}).$mount("#app");

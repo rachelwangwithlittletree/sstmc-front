@@ -1,33 +1,110 @@
 <template>
-  <div id="app">
-    <div class="top-part">
-    <div  class="logo-part">
-       <img src="assets/img/logo.png" alt="">
+  <div class="app">
+    <div>
+      <top-menu @menuClick="menuClick" />
     </div>
-    </div>
-    <div class="horizen-menu">
-      <TopMenu/>
-    </div>
-    
-    <div class="main-content">
-      <!-- <main-content/> -->
-    </div>
-    <router-view></router-view>
-    
+    <Content :subMenus="subMenus"></Content>
+    <Footer />
   </div>
 </template>
 
 <script>
+import Content from "components/common/Content";
+import Footer from "components/common/Footer";
 
-import TopMenu from 'components/content/topBar/TopMenu'
-// import MainContent from "components/content/mainContent/MainContent"
+import TopMenu from "components/content/topBar/TopMenu";
 export default {
   name: 'App',
+  data() {
+    return {
+      subMenus: []
+    };
+  },
   components: {
     TopMenu,
-    //  MainContent
+    Content,
+    Footer
+  },
+  methods: {
+    menuClick(id) {
+      if (id == "1") {
+        this.subMenus = [
+          {
+            name: "会议管理",
+            title: "会议管理",
+            menuGroup: [
+              {
+                title: "新建",
+                menuItem: [
+                  {
+                    name: "newMeeting",
+                    title: "新建会议"
+                  }
+                ]
+              },
+              {
+                title: "查看",
+                menuItem: [
+                  {
+                    name: "meetingList",
+                    title: "会议列表"
+                  }
+                ]
+              }
+            ]
+          }
+        ];
+        this.$router.push({
+          name: "MeetingMain"
+        });
+      }
+      if (id == "2") {
+        this.subMenus = [
+          {
+            name: "俱乐部管理",
+            title: "俱乐部管理",
+            menuGroup: [
+              {
+                title: "检索",
+                menuItem: [
+                  {
+                    name: "newMeeting",
+                    title: "新建会议"
+                  }
+                ]
+              }
+            ]
+          }
+        ];
+        this.$router.push({
+          name: "ClubMain"
+        });
+      }
+      if (id == "3") {
+        this.subMenus = [
+          {
+            name: "系统管理",
+            title: "系统管理",
+            menuGroup: [
+              {
+                title: "检索",
+                menuItem: [
+                  {
+                    name: "会议",
+                    title: "新建会议"
+                  }
+                ]
+              }
+            ]
+          }
+        ];
+        this.$router.push({
+          name: "SystemManageMain"
+        });
+      }
+    }
   }
-}
+};
 </script>
 
 <style>
@@ -39,10 +116,13 @@ export default {
   color: #2c3e50;
   /* margin-top: 60px; */
 }
-.main-content {
-  margin-top: 10px;  
+.main-page {
+  display: inline;
 }
-.top-part{
+.main-content {
+  margin-top: 10px;
+}
+.top-part {
   height: 50px;
 }
 

@@ -1,7 +1,13 @@
 <template>
   <div>
-    <div>
-      <Menu mode="vertical" :theme="theme1" active-name="1" :open-names="openNames" @on-select="test">
+    <div class='right-content'>
+      <Menu
+        mode="vertical"
+        :theme="theme1"
+        active-name="1"
+        :open-names="openNames" 
+         @on-select="verticalMenuSelect"       
+      >
         <!-- <Submenu name="1">
           <template slot="title">
             <Icon type="ios-stats" />会议管理
@@ -28,7 +34,9 @@
             <MenuItem
               v-for="(menuItem,index) in menuGroup.menuItem"
               :key="index"
-              :name="index"
+              :name="menuItem.name"
+              @on-select="verticalMenuSelect(menuItem.name)"
+
             >{{menuItem.title}}</MenuItem>
           </MenuGroup>
         </Submenu>
@@ -59,21 +67,58 @@ export default {
     console.log(this.subMenus);
   },
   methods: {
-    test() {}
+    verticalMenuSelect(name) {
+      console.log("menut item name:" + name )
+      
+      switch(name){
+        case 'newMeeting':
+          this.$router.push({
+             name: "CreateMeeting"
+          })
+          
+      }
+    }
   },
   props: {
     subMenus: {
       type: Array,
       default() {
-        return [];
+        return [
+          {
+            name: "会议管理",
+            title: "会议管理",
+            menuGroup: [
+              {
+                title: "新建",
+                menuItem: [
+                  {
+                    name: "newMeeting",
+                    title: "新建会议"
+                  }
+                ]
+              },
+              {
+                title: "查看",
+                menuItem: [
+                  {
+                    name: "meetingList",
+                    title: "会议列表"
+                  }
+                ]
+              }
+            ]
+          }
+          ];
       }
     },
     openNames: {
       type: Array,
       default() {
-        return ['会议管理','俱乐部管理','系统管理'];
+        return ["会议管理", "俱乐部管理", "系统管理"];
       }
     }
   }
 };
 </script>
+<style scoped>   
+</style>
