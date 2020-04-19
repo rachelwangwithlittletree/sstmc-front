@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0cc94e"],{"4f17":function(n,e,t){"use strict";t.r(e);var c=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("div",{},[n._v(" SSTMC 欢迎您 ")])},a=[],o={name:"",data:function(){return{}},components:{},methods:{}},u=o,r=t("2877"),s=Object(r["a"])(u,c,a,!1,null,"15fa4e08",null);e["default"]=s.exports}}]);
+//# sourceMappingURL=chunk-2d0cc94e.b4b9bdf5.js.map
