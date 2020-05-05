@@ -12,31 +12,62 @@
         <img src="~assets/img/timg.jpg" width="50%" alt="login background" />
       </div>
       <div class="right">
-        <el-form label-width="100px" class="demo-dynamic">
-          <el-form-item
-            prop="email"
-            label="邮箱"
-            :rules="[
+        <el-tabs v-model="activeName" @tab-click="handleClick" style='margin:0;padding:0;'>
+          <el-tab-pane label="密码登陆" name="first" style='margin:0;padding:0;'>
+            <el-form label-width="100px" class="demo-dynamic">
+              <el-form-item
+                prop="email"
+                label="邮箱"
+                :rules="[
       { required: true, message: '请输入邮箱地址', trigger: 'blur' },
       { type: 'email', message: '请输入正确的邮箱地址', trigger: ['blur', 'change'] }
     ]"
-          >
-            <el-input></el-input>
-          </el-form-item>
-          <el-form-item
-            label="域名"
-            :rules="{
+              >
+                <el-input></el-input>
+              </el-form-item>
+              <el-form-item
+                label="域名"
+                :rules="{
       required: true, message: '域名不能为空', trigger: 'blur'
     }"
-          >
-            <el-input></el-input>
-          </el-form-item>
-          <el-form-item>
-            <el-button type="primary" @click>登录</el-button>
-            <el-button @click>重置</el-button>
-            <el-button @click>注册</el-button>
-          </el-form-item>
-        </el-form>
+              >
+                <el-input></el-input>
+              </el-form-item>
+              <el-form-item>
+                <el-button type="primary" @click>登录</el-button>
+                <el-button @click>重置</el-button>
+                <el-button @click>注册</el-button>
+              </el-form-item>
+            </el-form>
+          </el-tab-pane>
+          <el-tab-pane label="短信登陆" name="second">
+              <el-form label-width="100px" class="demo-dynamic">
+              <el-form-item
+                prop="email"
+                label="邮箱"
+                :rules="[
+      { required: true, message: '请输入邮箱地址', trigger: 'blur' },
+      { type: 'email', message: '请输入正确的邮箱地址', trigger: ['blur', 'change'] }
+    ]"
+              >
+                <el-input></el-input>
+              </el-form-item>
+              <el-form-item
+                label="域名"
+                :rules="{
+      required: true, message: '域名不能为空', trigger: 'blur'
+    }"
+              >
+                <el-input></el-input>
+              </el-form-item>
+              <el-form-item>
+                <el-button type="primary" @click>登录</el-button>
+                <el-button @click>重置</el-button>
+                <el-button @click>注册</el-button>
+              </el-form-item>
+            </el-form>
+          </el-tab-pane>
+        </el-tabs>
       </div>
     </div>
     <div class="bottom"></div>
@@ -48,11 +79,14 @@ export default {
   name: "",
   data() {
     return {
+      activeName: ""
       // image: require(~assets/img/login.jpg)
     };
   },
   components: {},
-  methods: {}
+  methods: {
+    handleClick() {}
+  }
 };
 </script>
 
@@ -106,11 +140,10 @@ img {
   width: 50%;
   text-align: right;
   margin-right: 80px;
-  border-right: solid 3px  #d9dddf;
+  border-right: solid 3px #d9dddf;
 }
 .right {
-    text-align: center;
-    margin: 100px 0px 100px;
-    
+  text-align: left;
+  /* margin: 100px 0px 100px; */
 }
 </style>

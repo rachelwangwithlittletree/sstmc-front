@@ -24,7 +24,9 @@ import {
   MenuItem,
   MenuItemGroup,
   Form,
-  FormItem
+  FormItem,
+  Tabs,
+  TabPane
 } from "element-ui";
 Vue.use(Dropdown);
 Vue.use(DropdownMenu);
@@ -35,6 +37,8 @@ Vue.use(MenuItem);
 Vue.use(MenuItemGroup);
 Vue.use(Form);
 Vue.use(FormItem);
+Vue.use(Tabs);
+Vue.use(TabPane);
 Vue.component(Button.name, Button);
 Vue.component(Select.name, Select);
 Vue.config.productionTip = false;
