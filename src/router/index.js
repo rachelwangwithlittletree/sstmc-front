@@ -10,22 +10,29 @@ const SystemManageMain = () => import("views/sysmanage/SystemManageMain");
 const TestMeeting = () => import("components/common/TestMeeting");
 const OpenMain = () => import("views/openmain/OpenMain");
 const originalPush = VueRouter.prototype.push;
+//new pages routes
+const Login = () => import("views/login/Login");
 VueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err);
 };
 
 const routes = [
   {
-    path: "",
-    redirect: "/home"
+    path: "/",
+    redirect: "/login"
   },
   {
     path: "/home",
     component: OpenMain,
-    meta:{
-      title: '主页',
+    meta: {
+      title: "主页",
       isShowLeft: false
     }
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: Login
   },
   {
     path: "/clubmain",
@@ -38,7 +45,7 @@ const routes = [
     component: MeetingMain
   },
   {
-    path: "/newmeeting",
+    path: "/newMeeting",
     name: "CreateMeeting",
     component: CreateMeeting
   },

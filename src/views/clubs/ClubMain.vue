@@ -1,12 +1,7 @@
 <template>
-  <div class="sub-right-content">
-    <!-- <div class="club-left">
-       <main-left :subMenus = "subMenus" />
-    </div>
-    <div class="club-right">
-       <h2>俱乐部会议</h2>
-    </div> -->
+  <div class="sub-right-content">    
      这个俱乐部管理的主页
+     <div>hello </div>
   </div>
 </template>
 

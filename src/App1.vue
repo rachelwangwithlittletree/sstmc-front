@@ -1,30 +1,28 @@
 <template>
   <div id="app">
-    <!-- <div class="top-part">
-    <div  class="logo-part">
-       <img src="assets/img/logo.png" alt="">
-    </div>
-    </div>
-    <div class="horizen-menu">
-      <TopMenu/>
-    </div>
-    
-    <div class="main-content">    
-    </div> -->
+    <nav-bar />
     <router-view></router-view>
-    
+    <bottom class='main-footer'/>
   </div>
 </template>
 
 <script>
 
 // import TopMenu from 'components/content/topBar/TopMenu'
-// import MainContent from "components/content/mainContent/MainContent"
+import NavBar from "components/content/navbar/NavBar"
+import Bottom from "components/content/bottom/Bottom"
+
 export default {
   name: 'App',
+  data(){
+    return {
+      isLogin: false
+    }
+  },
   components: {
     // TopMenu,
-    //  MainContent
+     NavBar,
+     Bottom
   }
 }
 </script>
@@ -36,10 +34,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  /* height: 100%; */
   /* margin-top: 60px; */
 }
-.main-content {
-  margin-top: 10px;  
+.main-footer {
+  margin-top: 10px; 
+  text-align: center; 
 }
 .top-part{
   height: 50px;
